@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmMain
+Partial Class FormMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         Me.ToolStripMain = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButtonNewPassword = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -122,14 +122,14 @@ Partial Class frmMain
         Me.ColumnDeleteButton.Text = "Delete"
         Me.ColumnDeleteButton.UseColumnTextForButtonValue = True
         '
-        'frmMain
+        'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(899, 634)
         Me.Controls.Add(Me.DataGridViewAccounts)
         Me.Controls.Add(Me.ToolStripMain)
-        Me.Name = "frmMain"
+        Me.Name = "FormMain"
         Me.Text = "Password Manager"
         Me.ToolStripMain.ResumeLayout(False)
         Me.ToolStripMain.PerformLayout()
