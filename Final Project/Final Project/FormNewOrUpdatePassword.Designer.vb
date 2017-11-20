@@ -22,236 +22,251 @@ Partial Class FormNewOrUpdatePassword
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim txtGeneratedPassword As System.Windows.Forms.TextBox
-        Me.LabelName = New System.Windows.Forms.Label()
-        Me.LabelUsername = New System.Windows.Forms.Label()
-        Me.lblPassword = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.btnCreatePassword = New System.Windows.Forms.Button()
-        Me.grpPassword = New System.Windows.Forms.GroupBox()
+        Me.btnPassword = New System.Windows.Forms.Button()
+        Me.grpPasswordGenerator = New System.Windows.Forms.GroupBox()
+        Me.txtGenerated = New System.Windows.Forms.TextBox()
+        Me.btnGenerate = New System.Windows.Forms.Button()
+        Me.LabelPasswordChars = New System.Windows.Forms.Label()
+        Me.chkSpecial = New System.Windows.Forms.CheckBox()
+        Me.chkDigits = New System.Windows.Forms.CheckBox()
+        Me.chkLowerAZ = New System.Windows.Forms.CheckBox()
+        Me.chkUpperAZ = New System.Windows.Forms.CheckBox()
         Me.LabelPasswordLength = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.NumUpDownPasswordL = New System.Windows.Forms.NumericUpDown()
-        Me.ChkUpperCase = New System.Windows.Forms.CheckBox()
-        Me.chkLowerCase = New System.Windows.Forms.CheckBox()
-        Me.chkNumeric = New System.Windows.Forms.CheckBox()
-        Me.chkSpecialChar = New System.Windows.Forms.CheckBox()
-        Me.BtnGenerate = New System.Windows.Forms.Button()
-        txtGeneratedPassword = New System.Windows.Forms.TextBox()
-        Me.grpPassword.SuspendLayout()
-        CType(Me.NumUpDownPasswordL, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NumericUpDownPasswordLength = New System.Windows.Forms.NumericUpDown()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.LabelPassword = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.LabelUsername = New System.Windows.Forms.Label()
+        Me.LabelNameOrUrl = New System.Windows.Forms.Label()
+        Me.txtNameOrUrl = New System.Windows.Forms.TextBox()
+        Me.grpPasswordGenerator.SuspendLayout()
+        CType(Me.NumericUpDownPasswordLength, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'LabelName
+        'btnPassword
         '
-        Me.LabelName.AutoSize = True
-        Me.LabelName.Location = New System.Drawing.Point(34, 48)
-        Me.LabelName.Name = "LabelName"
-        Me.LabelName.Size = New System.Drawing.Size(110, 20)
-        Me.LabelName.TabIndex = 0
-        Me.LabelName.Text = "Name or URL:"
+        Me.btnPassword.Location = New System.Drawing.Point(178, 192)
+        Me.btnPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnPassword.Name = "btnPassword"
+        Me.btnPassword.Size = New System.Drawing.Size(235, 45)
+        Me.btnPassword.TabIndex = 4
+        Me.btnPassword.Text = "Create Password"
+        Me.btnPassword.UseVisualStyleBackColor = True
         '
-        'LabelUsername
+        'grpPasswordGenerator
         '
-        Me.LabelUsername.AutoSize = True
-        Me.LabelUsername.Location = New System.Drawing.Point(61, 101)
-        Me.LabelUsername.Name = "LabelUsername"
-        Me.LabelUsername.Size = New System.Drawing.Size(87, 20)
-        Me.LabelUsername.TabIndex = 0
-        Me.LabelUsername.Text = "Username:"
+        Me.grpPasswordGenerator.Controls.Add(Me.txtGenerated)
+        Me.grpPasswordGenerator.Controls.Add(Me.btnGenerate)
+        Me.grpPasswordGenerator.Controls.Add(Me.LabelPasswordChars)
+        Me.grpPasswordGenerator.Controls.Add(Me.chkSpecial)
+        Me.grpPasswordGenerator.Controls.Add(Me.chkDigits)
+        Me.grpPasswordGenerator.Controls.Add(Me.chkLowerAZ)
+        Me.grpPasswordGenerator.Controls.Add(Me.chkUpperAZ)
+        Me.grpPasswordGenerator.Controls.Add(Me.LabelPasswordLength)
+        Me.grpPasswordGenerator.Controls.Add(Me.NumericUpDownPasswordLength)
+        Me.grpPasswordGenerator.Location = New System.Drawing.Point(420, 58)
+        Me.grpPasswordGenerator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.grpPasswordGenerator.Name = "grpPasswordGenerator"
+        Me.grpPasswordGenerator.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.grpPasswordGenerator.Size = New System.Drawing.Size(375, 254)
+        Me.grpPasswordGenerator.TabIndex = 0
+        Me.grpPasswordGenerator.TabStop = False
+        Me.grpPasswordGenerator.Text = "Password Generator"
         '
-        'lblPassword
+        'txtGenerated
         '
-        Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(66, 159)
-        Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(82, 20)
-        Me.lblPassword.TabIndex = 0
-        Me.lblPassword.Text = "Password:"
+        Me.txtGenerated.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtGenerated.Location = New System.Drawing.Point(22, 186)
+        Me.txtGenerated.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtGenerated.Name = "txtGenerated"
+        Me.txtGenerated.ReadOnly = True
+        Me.txtGenerated.Size = New System.Drawing.Size(321, 44)
+        Me.txtGenerated.TabIndex = 6
+        Me.txtGenerated.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtName
+        'btnGenerate
         '
-        Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(154, 42)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(227, 28)
-        Me.txtName.TabIndex = 1
+        Me.btnGenerate.Location = New System.Drawing.Point(22, 134)
+        Me.btnGenerate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnGenerate.Name = "btnGenerate"
+        Me.btnGenerate.Size = New System.Drawing.Size(322, 45)
+        Me.btnGenerate.TabIndex = 5
+        Me.btnGenerate.Text = "Generate Password"
+        Me.btnGenerate.UseVisualStyleBackColor = True
         '
-        'txtPassword
+        'LabelPasswordChars
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(154, 153)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(227, 28)
-        Me.txtPassword.TabIndex = 3
+        Me.LabelPasswordChars.AutoSize = True
+        Me.LabelPasswordChars.Location = New System.Drawing.Point(19, 65)
+        Me.LabelPasswordChars.Name = "LabelPasswordChars"
+        Me.LabelPasswordChars.Size = New System.Drawing.Size(161, 20)
+        Me.LabelPasswordChars.TabIndex = 0
+        Me.LabelPasswordChars.Text = "Password characters:"
         '
-        'txtUsername
+        'chkSpecial
         '
-        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(154, 95)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(227, 28)
-        Me.txtUsername.TabIndex = 2
+        Me.chkSpecial.AutoSize = True
+        Me.chkSpecial.Location = New System.Drawing.Point(279, 92)
+        Me.chkSpecial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chkSpecial.Name = "chkSpecial"
+        Me.chkSpecial.Size = New System.Drawing.Size(78, 24)
+        Me.chkSpecial.TabIndex = 0
+        Me.chkSpecial.Text = "!%@#"
+        Me.chkSpecial.UseVisualStyleBackColor = True
         '
-        'btnCreatePassword
+        'chkDigits
         '
-        Me.btnCreatePassword.Location = New System.Drawing.Point(154, 194)
-        Me.btnCreatePassword.Name = "btnCreatePassword"
-        Me.btnCreatePassword.Size = New System.Drawing.Size(227, 48)
-        Me.btnCreatePassword.TabIndex = 4
-        Me.btnCreatePassword.Text = "Create Password"
-        Me.btnCreatePassword.UseVisualStyleBackColor = True
+        Me.chkDigits.AutoSize = True
+        Me.chkDigits.Checked = True
+        Me.chkDigits.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDigits.Location = New System.Drawing.Point(194, 92)
+        Me.chkDigits.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chkDigits.Name = "chkDigits"
+        Me.chkDigits.Size = New System.Drawing.Size(66, 24)
+        Me.chkDigits.TabIndex = 0
+        Me.chkDigits.Text = "0 - 9"
+        Me.chkDigits.UseVisualStyleBackColor = True
         '
-        'grpPassword
+        'chkLowerAZ
         '
-        Me.grpPassword.Controls.Add(txtGeneratedPassword)
-        Me.grpPassword.Controls.Add(Me.BtnGenerate)
-        Me.grpPassword.Controls.Add(Me.chkSpecialChar)
-        Me.grpPassword.Controls.Add(Me.chkNumeric)
-        Me.grpPassword.Controls.Add(Me.chkLowerCase)
-        Me.grpPassword.Controls.Add(Me.ChkUpperCase)
-        Me.grpPassword.Controls.Add(Me.NumUpDownPasswordL)
-        Me.grpPassword.Controls.Add(Me.Label2)
-        Me.grpPassword.Controls.Add(Me.LabelPasswordLength)
-        Me.grpPassword.Location = New System.Drawing.Point(400, 33)
-        Me.grpPassword.Name = "grpPassword"
-        Me.grpPassword.Size = New System.Drawing.Size(435, 325)
-        Me.grpPassword.TabIndex = 0
-        Me.grpPassword.TabStop = False
-        Me.grpPassword.Text = "Password Generator"
+        Me.chkLowerAZ.AutoSize = True
+        Me.chkLowerAZ.Checked = True
+        Me.chkLowerAZ.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkLowerAZ.Location = New System.Drawing.Point(279, 64)
+        Me.chkLowerAZ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chkLowerAZ.Name = "chkLowerAZ"
+        Me.chkLowerAZ.Size = New System.Drawing.Size(65, 24)
+        Me.chkLowerAZ.TabIndex = 0
+        Me.chkLowerAZ.Text = "a - z"
+        Me.chkLowerAZ.UseVisualStyleBackColor = True
+        '
+        'chkUpperAZ
+        '
+        Me.chkUpperAZ.AutoSize = True
+        Me.chkUpperAZ.Checked = True
+        Me.chkUpperAZ.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkUpperAZ.Location = New System.Drawing.Point(194, 64)
+        Me.chkUpperAZ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chkUpperAZ.Name = "chkUpperAZ"
+        Me.chkUpperAZ.Size = New System.Drawing.Size(69, 24)
+        Me.chkUpperAZ.TabIndex = 0
+        Me.chkUpperAZ.Text = "A - Z"
+        Me.chkUpperAZ.UseVisualStyleBackColor = True
         '
         'LabelPasswordLength
         '
         Me.LabelPasswordLength.AutoSize = True
-        Me.LabelPasswordLength.Location = New System.Drawing.Point(28, 45)
+        Me.LabelPasswordLength.Location = New System.Drawing.Point(45, 31)
         Me.LabelPasswordLength.Name = "LabelPasswordLength"
         Me.LabelPasswordLength.Size = New System.Drawing.Size(136, 20)
         Me.LabelPasswordLength.TabIndex = 0
         Me.LabelPasswordLength.Text = "Password Length:"
         '
-        'Label2
+        'NumericUpDownPasswordLength
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 94)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 20)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Password Characters:"
+        Me.NumericUpDownPasswordLength.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumericUpDownPasswordLength.Location = New System.Drawing.Point(194, 26)
+        Me.NumericUpDownPasswordLength.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.NumericUpDownPasswordLength.Minimum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.NumericUpDownPasswordLength.Name = "NumericUpDownPasswordLength"
+        Me.NumericUpDownPasswordLength.Size = New System.Drawing.Size(151, 28)
+        Me.NumericUpDownPasswordLength.TabIndex = 0
+        Me.NumericUpDownPasswordLength.Value = New Decimal(New Integer() {4, 0, 0, 0})
         '
-        'NumUpDownPasswordL
+        'txtPassword
         '
-        Me.NumUpDownPasswordL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumUpDownPasswordL.Location = New System.Drawing.Point(190, 39)
-        Me.NumUpDownPasswordL.Minimum = New Decimal(New Integer() {4, 0, 0, 0})
-        Me.NumUpDownPasswordL.Name = "NumUpDownPasswordL"
-        Me.NumUpDownPasswordL.Size = New System.Drawing.Size(175, 28)
-        Me.NumUpDownPasswordL.TabIndex = 5
-        Me.NumUpDownPasswordL.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(178, 151)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(235, 31)
+        Me.txtPassword.TabIndex = 3
         '
-        'ChkUpperCase
+        'LabelPassword
         '
-        Me.ChkUpperCase.AutoSize = True
-        Me.ChkUpperCase.Checked = True
-        Me.ChkUpperCase.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkUpperCase.Location = New System.Drawing.Point(190, 94)
-        Me.ChkUpperCase.Name = "ChkUpperCase"
-        Me.ChkUpperCase.Size = New System.Drawing.Size(69, 24)
-        Me.ChkUpperCase.TabIndex = 6
-        Me.ChkUpperCase.Text = "A - Z"
-        Me.ChkUpperCase.UseVisualStyleBackColor = True
+        Me.LabelPassword.AutoSize = True
+        Me.LabelPassword.Location = New System.Drawing.Point(90, 158)
+        Me.LabelPassword.Name = "LabelPassword"
+        Me.LabelPassword.Size = New System.Drawing.Size(82, 20)
+        Me.LabelPassword.TabIndex = 0
+        Me.LabelPassword.Text = "Password:"
         '
-        'chkLowerCase
+        'txtUsername
         '
-        Me.chkLowerCase.AutoSize = True
-        Me.chkLowerCase.Checked = True
-        Me.chkLowerCase.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLowerCase.Location = New System.Drawing.Point(277, 93)
-        Me.chkLowerCase.Name = "chkLowerCase"
-        Me.chkLowerCase.Size = New System.Drawing.Size(65, 24)
-        Me.chkLowerCase.TabIndex = 7
-        Me.chkLowerCase.Text = "a - z"
-        Me.chkLowerCase.UseVisualStyleBackColor = True
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(178, 109)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(235, 31)
+        Me.txtUsername.TabIndex = 2
         '
-        'chkNumeric
+        'LabelUsername
         '
-        Me.chkNumeric.AutoSize = True
-        Me.chkNumeric.Checked = True
-        Me.chkNumeric.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkNumeric.Location = New System.Drawing.Point(190, 126)
-        Me.chkNumeric.Name = "chkNumeric"
-        Me.chkNumeric.Size = New System.Drawing.Size(66, 24)
-        Me.chkNumeric.TabIndex = 8
-        Me.chkNumeric.Text = "0 - 9"
-        Me.chkNumeric.UseVisualStyleBackColor = True
+        Me.LabelUsername.AutoSize = True
+        Me.LabelUsername.Location = New System.Drawing.Point(85, 117)
+        Me.LabelUsername.Name = "LabelUsername"
+        Me.LabelUsername.Size = New System.Drawing.Size(87, 20)
+        Me.LabelUsername.TabIndex = 0
+        Me.LabelUsername.Text = "Username:"
         '
-        'chkSpecialChar
+        'LabelNameOrUrl
         '
-        Me.chkSpecialChar.AutoSize = True
-        Me.chkSpecialChar.Location = New System.Drawing.Point(277, 126)
-        Me.chkSpecialChar.Name = "chkSpecialChar"
-        Me.chkSpecialChar.Size = New System.Drawing.Size(78, 24)
-        Me.chkSpecialChar.TabIndex = 9
-        Me.chkSpecialChar.Text = "!%@#"
-        Me.chkSpecialChar.UseVisualStyleBackColor = True
+        Me.LabelNameOrUrl.AutoSize = True
+        Me.LabelNameOrUrl.Location = New System.Drawing.Point(62, 74)
+        Me.LabelNameOrUrl.Name = "LabelNameOrUrl"
+        Me.LabelNameOrUrl.Size = New System.Drawing.Size(110, 20)
+        Me.LabelNameOrUrl.TabIndex = 0
+        Me.LabelNameOrUrl.Text = "Name or URL:"
         '
-        'BtnGenerate
+        'txtNameOrUrl
         '
-        Me.BtnGenerate.Location = New System.Drawing.Point(23, 173)
-        Me.BtnGenerate.Name = "BtnGenerate"
-        Me.BtnGenerate.Size = New System.Drawing.Size(332, 47)
-        Me.BtnGenerate.TabIndex = 10
-        Me.BtnGenerate.Text = "Generate Password"
-        Me.BtnGenerate.UseVisualStyleBackColor = True
-        '
-        'txtGeneratedPassword
-        '
-        txtGeneratedPassword.BackColor = System.Drawing.SystemColors.Control
-        txtGeneratedPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        txtGeneratedPassword.Location = New System.Drawing.Point(23, 236)
-        txtGeneratedPassword.Name = "txtGeneratedPassword"
-        txtGeneratedPassword.ReadOnly = True
-        txtGeneratedPassword.Size = New System.Drawing.Size(332, 44)
-        txtGeneratedPassword.TabIndex = 0
+        Me.txtNameOrUrl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNameOrUrl.Location = New System.Drawing.Point(178, 68)
+        Me.txtNameOrUrl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtNameOrUrl.Name = "txtNameOrUrl"
+        Me.txtNameOrUrl.Size = New System.Drawing.Size(235, 31)
+        Me.txtNameOrUrl.TabIndex = 1
         '
         'FormNewOrUpdatePassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(856, 370)
-        Me.Controls.Add(Me.grpPassword)
-        Me.Controls.Add(Me.btnCreatePassword)
-        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.btnPassword)
+        Me.Controls.Add(Me.grpPasswordGenerator)
         Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.lblPassword)
+        Me.Controls.Add(Me.LabelPassword)
+        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.LabelUsername)
-        Me.Controls.Add(Me.LabelName)
+        Me.Controls.Add(Me.txtNameOrUrl)
+        Me.Controls.Add(Me.LabelNameOrUrl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FormNewOrUpdatePassword"
-        Me.Text = "FormNewOrUpdatePassword"
-        Me.grpPassword.ResumeLayout(False)
-        Me.grpPassword.PerformLayout()
-        CType(Me.NumUpDownPasswordL, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "New Password"
+        Me.grpPasswordGenerator.ResumeLayout(False)
+        Me.grpPasswordGenerator.PerformLayout()
+        CType(Me.NumericUpDownPasswordLength, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents LabelName As Label
-    Friend WithEvents LabelUsername As Label
-    Friend WithEvents lblPassword As Label
-    Friend WithEvents txtName As TextBox
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtUsername As TextBox
-    Friend WithEvents btnCreatePassword As Button
-    Friend WithEvents grpPassword As GroupBox
-    Friend WithEvents BtnGenerate As Button
-    Friend WithEvents chkSpecialChar As CheckBox
-    Friend WithEvents chkNumeric As CheckBox
-    Friend WithEvents chkLowerCase As CheckBox
-    Friend WithEvents ChkUpperCase As CheckBox
-    Friend WithEvents NumUpDownPasswordL As NumericUpDown
-    Friend WithEvents Label2 As Label
+    Friend WithEvents btnPassword As Button
+    Friend WithEvents grpPasswordGenerator As GroupBox
+    Friend WithEvents txtGenerated As TextBox
+    Friend WithEvents btnGenerate As Button
+    Friend WithEvents LabelPasswordChars As Label
+    Friend WithEvents chkSpecial As CheckBox
+    Friend WithEvents chkDigits As CheckBox
+    Friend WithEvents chkLowerAZ As CheckBox
+    Friend WithEvents chkUpperAZ As CheckBox
     Friend WithEvents LabelPasswordLength As Label
+    Friend WithEvents NumericUpDownPasswordLength As NumericUpDown
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents LabelPassword As Label
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents LabelUsername As Label
+    Friend WithEvents LabelNameOrUrl As Label
+    Friend WithEvents txtNameOrUrl As TextBox
 End Class
