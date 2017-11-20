@@ -28,6 +28,11 @@
         Dim username As String = txtUsername.Text.Trim()
         Dim password As String = txtPassword.Text.Trim()
 
+        If nameOrUrl = String.Empty Or username = String.Empty Or password = String.Empty Then
+            MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         ' Either create or update
         If _account Is Nothing Then
             ' Create
