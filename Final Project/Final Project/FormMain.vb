@@ -111,6 +111,7 @@ Public Class FormMain
 
             DataGridViewAccounts.Rows.Add(New Object() {nameOrUrl, username})
         Next
+
     End Sub
 
     ''' Close connection from DB
