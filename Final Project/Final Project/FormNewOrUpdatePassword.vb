@@ -80,6 +80,14 @@ Public Class FormNewOrUpdatePassword
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        ' Not yet implemented
+        ' Make sure that at least one is checked on the password configuration
+        If Not chkLowerAZ.Checked And Not chkUpperAZ.Checked And Not chkDigits.Checked And Not chkSpecial.Checked Then
+            MessageBox.Show("At least one of the checkboxes should be checked.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        ' Generate the password
+        Dim passwordGenerator As New PasswordGenerator(NumericUpDownPasswordLength.Value, chkLowerAZ.Checked, chkUpperAZ.Checked, chkDigits.Checked, chkSpecial.Checked)
+        txtGenerated.Text = passwordGenerator.GeneratePassword()
     End Sub
 End Class

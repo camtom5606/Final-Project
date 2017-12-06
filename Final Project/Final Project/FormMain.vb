@@ -87,8 +87,51 @@ Public Class FormMain
         End If
     End Sub
 
+    ''' Search and filter the passwords
+    Private Sub ToolStripButtonSearchPassword_Click(sender As Object, e As EventArgs) Handles ToolStripButtonSearchPassword.Click
+        Dim keyword As String = ToolStripTextBoxSearch.Text.Trim()
+
+        If keyword = String.Empty Then
+            Return
+        End If
+
+        ' Query the accounts that contains the keyword
+        DataGridViewAccounts.Rows.Clear()
+
+        Dim dataAdapter As New SQLiteDataAdapter("SELECT nameOrURL, username FROM account WHERE nameOrURL LIKE @keyword1 OR username LIKE @keyword2", _dbConnection)
+        dataAdapter.SelectCommand.Parameters.Add("@keyword1", DbType.String).Value = "%" & keyword & "%"
+        dataAdapter.SelectCommand.Parameters.Add("@keyword2", DbType.String).Value = "%" & keyword & "%"
+
+        Dim dataTable As New DataTable()
+        dataAdapter.Fill(dataTable)
+
+        For Each row As DataRow In dataTable.Rows
+            Dim nameOrUrl As String = row("nameOrURL").ToString()
+            Dim username As String = row("username").ToString()
+
+            DataGridViewAccounts.Rows.Add(New Object() {nameOrUrl, username})
+        Next
+    End Sub
+
     ''' Close connection from DB
     Private Sub FormMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         _dbConnection.Close()
     End Sub
+
+    ''' Display all accounts
+    Private Sub ToolStripButtonShowAll_Click(sender As Object, e As EventArgs) Handles ToolStripButtonShowAll.Click
+        DataGridViewAccounts.Rows.Clear()
+
+        Dim dataAdapter As New SQLiteDataAdapter("SELECT nameOrURL, username FROM account", _dbConnection)
+        Dim dataTable As New DataTable()
+        dataAdapter.Fill(dataTable)
+
+        For Each row As DataRow In dataTable.Rows
+            Dim nameOrUrl As String = row("nameOrURL").ToString()
+            Dim username As String = row("username").ToString()
+
+            DataGridViewAccounts.Rows.Add(New Object() {nameOrUrl, username})
+        Next
+    End Sub
+
 End Class

@@ -34,6 +34,7 @@ Partial Class FormMain
         Me.ColumnCopyPassword = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ColumnUpdateButton = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ColumnDeleteButton = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.ToolStripButtonShowAll = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripMain.SuspendLayout()
         CType(Me.DataGridViewAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,7 +43,7 @@ Partial Class FormMain
         '
         Me.ToolStripMain.AutoSize = False
         Me.ToolStripMain.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonNewPassword, Me.ToolStripSearchButton, Me.ToolStripTextBoxSearch, Me.ToolStripButtonSearchPassword})
+        Me.ToolStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonNewPassword, Me.ToolStripSearchButton, Me.ToolStripTextBoxSearch, Me.ToolStripButtonSearchPassword, Me.ToolStripButtonShowAll})
         Me.ToolStripMain.Location = New System.Drawing.Point(0, 0)
         Me.ToolStripMain.Name = "ToolStripMain"
         Me.ToolStripMain.Size = New System.Drawing.Size(1138, 56)
@@ -138,6 +139,15 @@ Partial Class FormMain
         Me.ColumnDeleteButton.UseColumnTextForButtonValue = True
         Me.ColumnDeleteButton.Width = 62
         '
+        'ToolStripButtonShowAll
+        '
+        Me.ToolStripButtonShowAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButtonShowAll.Image = CType(resources.GetObject("ToolStripButtonShowAll.Image"), System.Drawing.Image)
+        Me.ToolStripButtonShowAll.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonShowAll.Name = "ToolStripButtonShowAll"
+        Me.ToolStripButtonShowAll.Size = New System.Drawing.Size(160, 53)
+        Me.ToolStripButtonShowAll.Text = "Show all Accounts"
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -166,4 +176,5 @@ Partial Class FormMain
     Friend WithEvents ColumnCopyPassword As DataGridViewButtonColumn
     Friend WithEvents ColumnUpdateButton As DataGridViewButtonColumn
     Friend WithEvents ColumnDeleteButton As DataGridViewButtonColumn
+    Friend WithEvents ToolStripButtonShowAll As ToolStripButton
 End Class
