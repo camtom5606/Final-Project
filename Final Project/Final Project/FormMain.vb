@@ -1,4 +1,11 @@
-﻿Imports System.Data.SQLite
+﻿'Cameron Thomas
+'Password Manager
+'Advanced Visual Basic - Final Project
+'12/2/17
+
+Option Strict On
+Option Explicit On
+Imports System.Data.SQLite
 
 Public Class FormMain
     Private _dbConnection As SQLiteConnection
